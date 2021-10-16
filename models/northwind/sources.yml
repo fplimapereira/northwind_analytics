@@ -4,6 +4,7 @@ sources:
     - name: erp_northwind_10_2021
       tables:
         - name: orders
+
         - name: customers
           description: Essa é a tabela de clientes
           columns:
@@ -12,3 +13,15 @@ sources:
             tests:
             - unique
             - not_null
+
+        - name: employees
+
+        - name: products
+
+        - name: categories
+
+        - name: shippers
+
+        - name: suppliers
+
+        - name: order_details    
