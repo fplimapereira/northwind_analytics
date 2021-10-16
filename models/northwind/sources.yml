@@ -1,0 +1,14 @@
+version: 2
+
+sources:
+    - name: erp_northwind_10_2021
+      tables:
+        - name: orders
+        - name: customers
+          description: Essa é a tabela de clientes
+          columns:
+          - name: customer_id
+            description: Chave primária da tabela   
+            tests:
+            - unique
+            - not_null

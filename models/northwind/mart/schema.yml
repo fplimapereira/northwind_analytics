@@ -1,0 +1,20 @@
+version: 2
+
+models:
+    - name: fact_orders
+      description: "A tabela de fatos baseada na tabela relacional de pedidos"
+      columns:
+        - name: order_id
+          description: "Chave primária original da tabela pedidos"
+          tests:
+           - unique
+           - not_null 
+
+    - name: dim_customers
+      description: "A tabela dimensão de clientes"
+      columns:
+        - name: customers_id
+          description: "Chave primária original da tabela clientes"
+          tests:
+           - unique
+           - not_null
