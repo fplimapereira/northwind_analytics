@@ -21,7 +21,8 @@ with
 ,
     transformed as (
         select
-            products.product_id
+            row_number() over (order by product_id) as product_sk -- auto-incremental surrogate key
+          , products.product_id
           , products.product_name 
           , categories.category_id
           , categories.category_name
