@@ -4,6 +4,13 @@ sources:
     - name: erp_northwind_10_2021
       tables:
         - name: orders
+          description: Essa é a tabela de pedidos
+          columns:
+          - name: order_id
+            description: Chave primária da tabela   
+            tests:
+            - unique
+            - not_null
 
         - name: customers
           description: Essa é a tabela de clientes
@@ -15,13 +22,58 @@ sources:
             - not_null
 
         - name: employees
+          description: Essa é a tabela de funcionários
+          columns:
+          - name: employee_id
+            description: Chave primária da tabela   
+            tests:
+            - unique
+            - not_null
 
         - name: products
+          description: Essa é a tabela de produtos
+          columns:
+          - name: product_id
+            description: Chave primária da tabela   
+            tests:
+            - unique
+            - not_null
 
         - name: categories
+          description: Essa é a tabela de categorias de produtos
+          columns:
+          - name: category_id
+            description: Chave primária da tabela   
+            tests:
+            - unique
+            - not_null
 
         - name: shippers
+          description: Essa é a tabela de entregadores
+          columns:
+          - name: shipper_id
+            description: Chave primária da tabela   
+            tests:
+            - unique
+            - not_null
 
         - name: suppliers
+          description: Essa é a tabela de fornecedores
+          columns:
+          - name: supplier_id
+            description: Chave primária da tabela   
+            tests:
+            - unique
+            - not_null
 
-        - name: order_details    
+        - name: order_details
+          description: Essa é a tabela de detalhes dos pedidos
+          columns:
+          - name: order_id
+            description: Chave primária da tabela   
+            tests:            
+            - not_null
+          - name: product_id
+            description: Chave primária da tabela   
+            tests:            
+            - not_null     

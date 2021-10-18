@@ -38,12 +38,14 @@ with
 
     o_details as (
         select
-           order_id                           
+           order_id
+         , product_id                             
          , unit_price
          , quantity
          , discount
 
-        from {{ ref('stg_order_details') }}          
+        from {{ ref('stg_order_details') }}
+        left join products using(product_id)          
     )
 
 ,   orders_with_sk as (
@@ -52,10 +54,9 @@ with
           , customers.customer_id
           , employees.employee_id          
           , orders.order_date
-          , products.product_id          
           , o_details.unit_price
           , o_details.quantity
-          , o_details.discount
+          , o_details.discount         
           , orders.ship_region
           , orders.shipped_date
           , orders.ship_country
@@ -72,8 +73,7 @@ with
         left join customers using(customer_id)
         left join employees using(employee_id)
         left join o_details using(order_id)        
-        left join shippers using(shipper_id)
-        left join products using(product_id)          
+        left join shippers using(shipper_id)                
 )
 
 select * from orders_with_sk
