@@ -7,14 +7,42 @@ models:
         - name: order_id
           description: "Chave primária original da tabela pedidos"
           tests:
-           - unique
            - not_null 
 
     - name: dim_customers
       description: "A tabela dimensão de clientes"
       columns:
-        - name: customers_id
+        - name: customer_id
           description: "Chave primária original da tabela clientes"
           tests:
            - unique
            - not_null
+
+    - name: dim_products
+      description: "A tabela dimensão de produtos"
+      columns:
+        - name: product_id
+          description: "Chave primária original da tabela produtos"
+          tests:
+           - unique
+           - not_null 
+
+    - name: dim_employees
+      description: "A tabela dimensão de funcionários"
+      columns:
+        - name: employee_id
+          description: "Chave primária original da tabela funcionários"
+          tests:
+           - unique
+           - not_null
+
+    - name: dim_shippers
+      description: "A tabela dimensão de entregadores"
+      columns:
+        - name: shipper_id
+          description: "Chave primária original da tabela entregadores"
+          tests:
+           - unique
+           - not_null 
+
+            
