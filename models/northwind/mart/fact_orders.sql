@@ -75,8 +75,8 @@ with
 , final as (
     select
         o_details.order_id
-      , orders_with_sk.customer_sk 
-      , orders_with_sk.employee_sk         
+      , orders_with_sk.customer_fk 
+      , orders_with_sk.employee_fk         
       , orders_with_sk.order_date
       , o_details.product_fk
       , o_details.unit_price

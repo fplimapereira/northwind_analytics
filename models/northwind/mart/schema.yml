@@ -13,7 +13,7 @@ models:
       description: "A tabela dimensão de clientes"
       columns:
         - name: customer_id
-          description: "Chave primária original da tabela clientes"
+          description: "Chave primária da dimensão clientes"
           tests:
            - unique
            - not_null
